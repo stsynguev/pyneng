@@ -26,3 +26,8 @@
 """
 
 ip = "192.168.3.1"
+result = [int(e) for e in ip.split('.')]
+print(''' 
+    {0:<10}{1:<10}{2:<10}{3:<10}
+    {0:0<8b}  {1:0<8b}  {2:0>8b}  {3:0>8b}
+'''.format(result[0],result[1],result[2],result[3]))

@@ -16,3 +16,5 @@
 """
 
 mac = "AAAA:BBBB:CCCC"
+
+print(f"{int(mac.replace(':',''),16):08b}")

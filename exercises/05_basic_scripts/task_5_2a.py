@@ -49,3 +49,18 @@ bin_ip = "00001010000000010000000111000011"
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+
+usr_str = input('Введите адрес в формате сеть/маска: ')
+ip = [int(e) for e in usr_str.split('/')[0].split('.')]
+bin_ip = f"{ip[0]:>08b}{ip[1]:>08b}{ip[2]:>08b}{ip[3]:>08b}"
+mask = int(usr_str.split('/')[1])
+bin_mask = mask*"1" + (32-mask)*"0"
+bin_net = bin_ip[0:mask]+"0"*(32-mask)
+print(f"Network:")
+print(f"{int(bin_net[0:8],2):<10}{int(bin_net[8:16],2):<10}{int(bin_net[16:24],2):<10}{int(bin_net[24:32],2):<10}")
+print(f"{bin_net[0:8]}  {bin_net[8:16]}  {bin_net[16:24]}  {bin_net[24:32]}")
+print(f"Mask:")
+print(f"/{mask}")
+print(f"{int(bin_mask[0:8],2):<10}{int(bin_mask[8:16],2):<10}{int(bin_mask[16:24],2):<10}{int(bin_mask[24:32],2):<10}")
+print(f"{bin_mask[0:8]}  {bin_mask[8:16]}  {bin_mask[16:24]}  {bin_mask[24:32]}")
+

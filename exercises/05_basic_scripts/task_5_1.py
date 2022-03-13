@@ -46,3 +46,5 @@ london_co = {
         "routing": True,
     },
 }
+dict1 = input('Enter a name of device: ')
+print(london_co.setdefault(dict1))

@@ -30,3 +30,15 @@ Out[1]: '11111111111111111111111111110000'
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
+usr_str = input('Введите адрес в формате сеть/маска: ')
+ip = [int(e) for e in usr_str.split('/')[0].split('.')]
+mask = int(usr_str.split('/')[1])
+bin_mask = mask*"1" + (32-mask)*"0"
+print(f"Network:")
+print(f"{ip[0]:<10}{ip[1]:<10}{ip[2]:<10}{ip[3]:<10}")
+print(f"{ip[0]:>08b}  {ip[1]:>08b}  {ip[2]:>08b}  {ip[3]:>08b}")
+print(f"Mask:")
+print(f"/{mask}")
+print(f"{int(bin_mask[0:8],2):<10}{int(bin_mask[8:16],2):<10}{int(bin_mask[16:24],2):<10}{int(bin_mask[24:32],2):<10}")
+print(f"{bin_mask[0:8]}  {bin_mask[8:16]}  {bin_mask[16:24]}  {bin_mask[24:32]}")
+
